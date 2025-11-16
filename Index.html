@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#069494">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Material Calc">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="Material Calculator for Sizer, Micron, RPM and LS3 calculations">
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIk1hdGVyaWFsIENhbGN1bGF0b3IiLAogICJzaG9ydF9uYW1lIjogIk1hdGVyaWFsIENhbGMiLAogICJkZXNjcmlwdGlvbiI6ICJNYXRlcmlhbCBDYWxjdWxhdG9yIGZvciBTaXplciwgTWljcm9uLCBSUE0gYW5kIExTMyBjYWxjdWxhdGlvbnMiLAogICJzdGFydF91cmwiOiAiLiIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiI2Y4ZjlmYSIsCiAgInRoZW1lX2NvbG9yIjogIiMwNjk0OTQiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBeE9EZ2dNVGc0SWo0OGNtVmpkQ0IzYVdSMGFEMGlNVGc0SWlCb1pXbG5hSFE5SWpFNE9DSWdabWxzYkQwaUl6QTJPVFE1TkNJdlBqeDBaWGgwSUhnOUlqazBJaUI1UFNJNE5DSWdabWxzYkQwaUkzZG9hWFJsSWlCbWIyNTBMV1poYldsc2VUMGlRWEpwWVd3aUlHWnZiblF0YzJsNlpUMGlORGdpSUdadmJuUXRkMlZwWjJoMFBTSmliMnhrSWlCMFpYaDBMV0Z1WTJodmNqMGliV2xrWkd4bElqNU1VenhqZEdWNGRDQjRQU0k1TkNJZ2VUMGlNVFF3SWlCbWFXeHNQU0lqZDJocGRHVWlJR1p2Ym5RdGMybDZaVDBpTWpRaVBqTThMM1JsZUhRK1BDOTJJRDA9IiwKICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIgogICAgfSwKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBeE9EZ2dNVGc0SWo0OGNtVmpkQ0IzYVdSMGFEMGlNVGc0SWlCb1pXbG5hSFE5SWpFNE9DSWdabWxzYkQwaUl6QTJPVFE1TkNJdlBqeDBaWGgwSUhnOUlqazBJaUI1UFNJNE5DSWdabWxzYkQwaUkzZG9hWFJsSWlCbWIyNTBMV1poYldsc2VUMGlRWEpwWVd3aUlHWnZiblF0YzJsNlpUMGlORGdpSUdadmJuUXRkMlZwWjJoMFBTSmliMnhrSWlCMFpYaDBMV0Z1WTJodmNqMGliV2xrWkd4bElqNU1VenhqZEdWNGRDQjRQU0k1TkNJZ2VUMGlNVFF3SWlCbWFXeHNQU0lqZDJocGRHVWlJR1p2Ym5RdGMybDZaVDBpTWpRaVBqTThMM1JsZUhRK1BDOTJJRDA9IiwKICAgICAgInNpemVzIjogIjUxMng1MTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9zdmcreG1sIgogICAgfQogIF0KfQ==">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODggMTg4Ij48cmVjdCB3aWR0aD0iMTg4IiBoZWlnaHQ9IjE4OCIgZmlsbD0iIzA2OTQ5NCIvPjx0ZXh0IHg9Ijk0IiB5PSI4NCIgZmlsbD0iI3doaXRlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5MUzwvdGV4dD48dGV4dCB4PSI5NCIgeT0iMTQwIiBmaWxsPSIjd2hpdGUiIGZvbnQtc2l6ZT0iMjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjM8L3RleHQ+PC9zdmc+">
+    <title>Material Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .excel-table-wrapper {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-row {
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .data-row:last-child {
+            border-bottom: none;
+        }
+
+        .label-cell {
+            padding: 20px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #1a1a1a;
+            text-align: left;
+            background: #f8f9fa;
+            border-right: 3px solid #069494;
+            width: 30%;
+        }
+
+        .input-cell {
+            padding: 15px 20px;
+            text-align: center;
+            width: 70%;
+        }
+
+        .excel-input {
+            width: 100%;
+            padding: 24px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 26px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #1a1a1a;
+            background: #fafbfc;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .excel-input:focus {
+            outline: none;
+            border-color: #069494;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(6, 148, 148, 0.1);
+        }
+
+        .excel-input::placeholder {
+            color: #adb5bd;
+            font-weight: 400;
+        }
+
+        .excel-input:disabled {
+            background: #e3f5f5;
+            color: #069494;
+            font-weight: 700;
+            cursor: not-allowed;
+            border-color: #069494;
+            font-size: 28px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .excel-table-wrapper {
+                padding: 20px;
+            }
+
+            .label-cell {
+                font-size: 16px;
+                padding: 15px;
+            }
+
+            .excel-input {
+                padding: 18px;
+                font-size: 20px;
+            }
+
+            .excel-input:disabled {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="excel-table-wrapper">
+            <table class="data-table" id="dataTable">
+                <tbody>
+                    <tr class="data-row">
+                        <td class="label-cell">Sizer</td>
+                        <td class="input-cell"><input type="number" class="excel-input" step="0.01" placeholder="Enter Sizer" id="setSizer"></td>
+                    </tr>
+                    <tr class="data-row">
+                        <td class="label-cell">Micron</td>
+                        <td class="input-cell"><input type="number" class="excel-input" step="0.01" placeholder="Enter Micron" id="setMicron"></td>
+                    </tr>
+                    <tr class="data-row">
+                        <td class="label-cell">RPM</td>
+                        <td class="input-cell"><input type="number" class="excel-input" step="0.01" placeholder="Enter RPM" id="setRPM"></td>
+                    </tr>
+                    <tr class="data-row">
+                        <td class="label-cell">LS 3</td>
+                        <td class="input-cell"><input type="text" class="excel-input" placeholder="Auto calculated" id="setLS3" disabled></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Fixed Current values (hidden from UI)
+        const CURRENT_SIZER = 710;
+        const CURRENT_MICRON = 35;
+        const CURRENT_RPM = 800;
+        const CURRENT_LS3 = 1080;
+
+        // Store the triggered LS3 value from first calculation
+        let triggeredLS3 = 0;
+
+        function calculateSetLS3() {
+            const setSizer = parseFloat(document.getElementById('setSizer').value) || 0;
+            const setMicron = parseFloat(document.getElementById('setMicron').value) || 0;
+            const setRPM = parseFloat(document.getElementById('setRPM').value) || 0;
+            const setLS3Input = document.getElementById('setLS3');
+
+            // Need at least Sizer and Micron to calculate
+            if (setSizer <= 0 || setMicron <= 0) {
+                setLS3Input.value = '';
+                triggeredLS3 = 0;
+                return;
+            }
+
+            // Step 1: Calculate triggered LS3 using Current RPM
+            // Formula: 21470400000 / Set Sizer / Set Micron / Current RPM
+            triggeredLS3 = 21470400000 / setSizer / setMicron / CURRENT_RPM;
+
+            // Step 2: Check if Set RPM is filled
+            if (setRPM > 0) {
+                // Formula: Triggered LS3 / Current RPM × Set RPM
+                const finalLS3 = (triggeredLS3 / CURRENT_RPM) * setRPM;
+                setLS3Input.value = finalLS3.toFixed(2);
+            } else {
+                // Show triggered LS3 if Set RPM is not yet filled
+                setLS3Input.value = triggeredLS3.toFixed(2);
+            }
+        }
+
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('data:text/javascript;base64,c2VsZi5hZGRFdmVudExpc3RlbmVyKCdpbnN0YWxsJywgZnVuY3Rpb24oZXZlbnQpIHsKICBldmVudC53YWl0VW50aWwoc2VsZi5za2lwV2FpdGluZygpKTsKfSk7CgpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoJ2FjdGl2YXRlJywgZnVuY3Rpb24oZXZlbnQpIHsKICBldmVudC53YWl0VW50aWwoc2VsZi5jbGllbnRzLmNsYWltKCkpOwp9KTsKCnNlbGYuYWRkRXZlbnRMaXN0ZW5lcignZmV0Y2gnLCBmdW5jdGlvbihldmVudCkgewogIGV2ZW50LnJlc3BvbmRXaXRoKGZldGNoKGV2ZW50LnJlcXVlc3QpKTsKfSk7').catch(() => {});
+            });
+        }
+
+        // Attach event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('setSizer').addEventListener('input', calculateSetLS3);
+            document.getElementById('setMicron').addEventListener('input', calculateSetLS3);
+            document.getElementById('setRPM').addEventListener('input', calculateSetLS3);
+        });
+    </script>
+</body>
+</html>
